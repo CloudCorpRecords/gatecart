@@ -1,0 +1,31 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; background: #0f1420; color: #e8ecf4; }
+header { padding: 2rem 1.25rem 0.5rem; max-width: 860px; margin: 0 auto; }
+h1 { margin: 0 0 .25rem; font-size: 2rem; }
+.tagline { color: #aeb9cf; margin: .25rem 0 .75rem; }
+.mode { display: inline-block; padding: .35rem .7rem; border-radius: 999px; font-size: .85rem; background: #23304a; border: 1px solid #3b4f79; }
+.mode.sandbox { background: #123524; border-color: #1f6f43; }
+main { max-width: 860px; margin: 0 auto; padding: 1rem 1.25rem 2rem; display: grid; gap: 1rem; }
+.card { background: #171e2e; border: 1px solid #2a3550; border-radius: 14px; padding: 1.1rem 1.25rem; }
+.card h2 { margin-top: 0; font-size: 1.15rem; }
+label { display: block; margin: .6rem 0; color: #c4cee2; font-size: .92rem; }
+input, select { width: 100%; margin-top: .3rem; padding: .55rem .6rem; border-radius: 8px; border: 1px solid #3b4f79; background: #0f1420; color: #e8ecf4; font-size: 1rem; }
+label input[type="checkbox"] { width: auto; margin-right: .45rem; }
+button { background: #2f7cf6; color: white; border: 0; padding: .6rem 1rem; border-radius: 9px; font-size: .98rem; cursor: pointer; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button.ghost { background: transparent; border: 1px solid #3b4f79; color: #c4cee2; }
+.row { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin-top: .7rem; }
+a#approve-link { color: #7db4ff; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; margin: .7rem 0; font-size: .94rem; }
+th, td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid #2a3550; }
+td:last-child, th:last-child { text-align: right; }
+tfoot td { font-weight: 700; border-top: 2px solid #3b4f79; }
+.summary { background: #101828; border-left: 4px solid #2f7cf6; padding: .7rem .9rem; border-radius: 6px; }
+ul { padding-left: 1.2rem; }
+li { margin: .3rem 0; }
+.gate-pass { color: #5fd68b; } .gate-breached { color: #ff7b72; font-weight: 700; } .gate-attention { color: #ffcf6e; } .gate-awaiting { color: #aeb9cf; }
+.msg { min-height: 1.2em; color: #ffcf6e; }
+.receipt { background: #0b0f18; border: 1px solid #2a3550; border-radius: 10px; padding: .9rem; overflow-x: auto; font-size: .82rem; white-space: pre-wrap; }
+.hidden { display: none !important; }
+footer { max-width: 860px; margin: 0 auto; padding: 0 1.25rem 2rem; color: #7787a5; font-size: .85rem; }
+.sub { color: #7787a5; font-size: .8rem; }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GateCart — Agentic checkout with approval gates</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <h1>🛒 GateCart</h1>
+  <p class="tagline">An AI agent that buys for you — <strong>but only after you say yes.</strong></p>
+  <p id="mode-banner" class="mode">Loading payment mode…</p>
+</header>
+
+<main>
+  <section class="card" id="ask-card">
+    <h2>1 · Ask the agent</h2>
+    <label>Scenario
+      <select id="scenario"></select>
+    </label>
+    <label><span id="scale-label">Scale</span>
+      <input id="scale" type="number" value="60" min="1">
+    </label>
+    <label>Hard budget (USD)
+      <input id="budget" type="number" value="320" min="1" step="1">
+    </label>
+    <label>Priorities (comma-separated, optional)
+      <input id="priorities" type="text" placeholder="e.g. coffee, food">
+    </label>
+    <button id="plan-btn">Ask agent to plan the purchase</button>
+  </section>
+
+  <section class="card hidden" id="plan-card">
+    <h2>2 · The agent's plan</h2>
+    <p id="plan-summary" class="summary"></p>
+    <table id="plan-table">
+      <thead><tr><th>Item</th><th>Tier</th><th>Qty</th><th>Unit</th><th>Total</th></tr></thead>
+      <tbody></tbody>
+      <tfoot><tr><td colspan="4">Plan total</td><td id="plan-total"></td></tr></tfoot>
+    </table>
+    <h3>Why — the agent's decision log</h3>
+    <ul id="decisions"></ul>
+    <h3>Approval gates</h3>
+    <ul id="gates"></ul>
+    <div id="gate-actions">
+      <label id="override-wrap" class="hidden"><input type="checkbox" id="override"> I override the breached gate(s) — approve anyway, on the record</label>
+      <label id="ack-wrap" class="hidden"><input type="checkbox" id="ack"> I acknowledge the flagged item(s) above</label>
+      <div class="row">
+        <button id="approve-btn">✅ Approve this plan</button>
+        <button id="reject-btn" class="ghost">Reject</button>
+      </div>
+      <p id="approve-msg" class="msg"></p>
+    </div>
+  </section>
+
+  <section class="card hidden" id="order-card">
+    <h2>3 · PayPal checkout</h2>
+    <p id="order-status">No order yet. An order can only be created from an approved plan.</p>
+    <div class="row">
+      <button id="order-btn" disabled>Create PayPal order</button>
+      <button id="sim-approve-btn" class="hidden">Simulate buyer approval (simulator only)</button>
+      <a id="approve-link" class="hidden" href="#" target="_blank" rel="noopener">Approve on PayPal →</a>
+      <button id="capture-btn" disabled>Capture payment</button>
+    </div>
+    <pre id="receipt" class="receipt hidden"></pre>
+  </section>
+</main>
+
+<footer>
+  <p>GateCart demo. In simulator mode every order is a local simulation (SIM- ids) — no PayPal systems are contacted and no money moves. In sandbox mode orders are real PayPal <em>sandbox</em> orders. The agent proposes; the human disposes.</p>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
