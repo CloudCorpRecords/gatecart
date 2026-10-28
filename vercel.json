@@ -1,1 +1,1 @@
-{"rewrites":[{"destination":"/api/probe","source":"/__probe"},{"destination":"/api/index.js?__vercel_path=/$1","source":"/(.*)"}]}
+{"rewrites":[{"destination":"/api/index.js?__vercel_path=/$1","source":"/(.*)"},{"destination":"/api/probe","source":"/__probe"}]}
