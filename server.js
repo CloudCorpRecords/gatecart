@@ -228,4 +228,8 @@ if (require.main === module) {
   });
 }
 
-module.exports = { server, MODE };
+// Export the http.Server itself (Vercel's Node runtime requires the
+// default export to be a function or server); MODE rides along as a
+// property for tests and tooling.
+module.exports = server;
+module.exports.MODE = MODE;
